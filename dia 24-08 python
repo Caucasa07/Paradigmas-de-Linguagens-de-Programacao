@@ -1,0 +1,27 @@
+codigo = 1
+
+total = 0.0
+
+while codigo != 0:
+    codigo = int(input("Qual o código do produto a ser comprado? (Digite 0 para encerrar): "))
+    
+    if codigo == 0:
+        break
+    
+    if codigo in [1, 2, 3, 5, 9]:
+        quant = int(input("Qual a quantidade desse produto você deseja adquirir? "))
+        
+        if codigo == 1:
+            total += 0.5 * quant
+        elif codigo == 2:
+            total += 1.0 * quant
+        elif codigo == 3:
+            total += 4.0 * quant
+        elif codigo == 5:
+            total += 7.0 * quant
+        elif codigo == 9:
+            total += 8.0 * quant
+    else:
+        print("Código inválido")
+
+print(f"Total das compras: R${total:.2f}")
