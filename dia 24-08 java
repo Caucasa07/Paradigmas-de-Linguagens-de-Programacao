@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        double total = 0;
+        int codigo = 0;
+        Scanner in = new Scanner(System.in); // Mova a criação do Scanner para fora do loop
+
+        do {
+            System.out.println("Código do produto:");
+            codigo = in.nextInt();
+
+            if (codigo == 0) {
+                break; // Saia do loop se o código for 0
+            }
+
+            System.out.println("Quantidade do produto:");
+            int quant = in.nextInt();
+
+            switch (codigo) {
+                case 1:
+                    total += 0.5 * quant;
+                    break; // Adicione "break" após cada caso
+                case 2:
+                    total += 1.0 * quant; // Corrija o valor do preço
+                    break;
+                case 3:
+                    total += 4.0 * quant; // Corrija o valor do preço
+                    break;
+                case 5:
+                    total += 7.0 * quant; // Corrija o valor do preço
+                    break;
+                case 9:
+                    total += 8.0 * quant; // Corrija o valor do preço
+                    break;
+                default:
+                    System.out.println("Código inválido");
+                    break;
+            }
+        } while (codigo != 0);
+
+        System.out.println("Total das compras: " + total);
+    }
+}
