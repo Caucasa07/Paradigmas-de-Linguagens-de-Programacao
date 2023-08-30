@@ -1,0 +1,47 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	total := 0.0
+
+	for {
+		var codigo int
+		var quantidade int
+
+		fmt.Print("Digite o código do produto (ou 0 para finalizar): ")
+		fmt.Scan(&codigo)
+
+		if codigo == 0 {
+			break
+		}
+
+		var preco float64
+
+		switch codigo {
+		case 1:
+			preco = 0.5
+		case 2:
+			preco = 1.0
+		case 3:
+			preco = 4.0
+		case 5:
+			preco = 7.0
+		case 9:
+			preco = 8.0
+		default:
+			fmt.Println("Código inválido")
+			continue
+		}
+
+		fmt.Print("Digite a quantidade comprada: ")
+		fmt.Scan(&quantidade)
+
+		subtotal := preco * float64(quantidade)
+		total += subtotal
+	}
+
+	fmt.Printf("Total das compras: R$%.2f\n", total)
+}
